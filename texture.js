@@ -90,7 +90,7 @@
 		var canvas=document.getElementById("canvas"),
 		    ctx=canvas.getContext("2d"),
 		    imgData = ctx.createImageData(canvas.width, canvas.height),
-		    index=0, z=0, r=0, scaleX=0.1,scaleY=0.5,XX,YY;
+		    index=0, z=0.1, r=0, scaleX=0.1,scaleY=0.2,XX,YY;
 
 		for (var x=0; x<canvas.width; x++)
 			for (var y=0; y<canvas.height; y++) {
