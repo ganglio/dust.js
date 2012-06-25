@@ -85,6 +85,21 @@
 			return noise;
 	}
 	
+	function wood(x,y,z) {
+		var r;
+		r=(Simplex(2*x,3*y,z)+1)*30; // Main structure
+		r=(r-Math.round(r));
+		r+=Simplex(x*200,y*200,z)*0.5; // Grain
+		r+=Simplex(z,y*100,z)*0.7; // Stripes
+		r=(r+1)/2;
+		
+		return r;
+	}
+	
+	function marble(x,y,z,alpha,beta,gamma) {
+		var r=Math.cos(x*alpha+Simplex(x*beta,y*beta,z*beta)*gamma);
+		return r;
+	}
 	
 	function start() {
 		var canvas=document.getElementById("canvas"),
@@ -99,11 +114,7 @@
 				XX=scaleX*((2*x/canvas.width)-1);
 				YY=scaleY*((2*y/canvas.height)-1);
 				
-				r=(Simplex(2*XX,3*YY,YY)+1)*30;
-				r=(r-Math.round(r));
-				r+=Simplex(XX*200,YY*200,z)*0.5;
-				r+=Simplex(XX,YY*100,z)*0.7;
-				r=(r+1)/2;
+				r=marble(XX,YY,z,64,48,10);
 				
 				var red   = r*180,
 				    green = r*130,

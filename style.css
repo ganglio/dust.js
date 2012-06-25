@@ -1,5 +1,5 @@
 .noise {
-	background-image: noise(200px 100px 0.1 #000000), -webkit-linear-gradient(top,#444444,#aaaaaa);
+	background-image: noise(50px 200px 0.3 #ff0000 #00ff00 0.02 0.001 0.005);
 	width: 200px;
 	height: 200px;
 }
